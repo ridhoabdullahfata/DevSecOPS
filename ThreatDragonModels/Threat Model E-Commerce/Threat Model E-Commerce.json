@@ -1,0 +1,39 @@
+{
+  "version": "2.6.2",
+  "release_version": "E-Commerce Threat– v1.0",
+  "released_at": "2026-09-23",
+  "summary": {
+    "title": "Threat Model E-Commerce",
+    "owner": "Ridho Abdullah fata",
+    "description": "Sistem merupakan aplikasi web yang digunakan untuk mengelola data dan menyediakan layanan kepada pengguna melalui jaringan internet. Aplikasi terdiri dari sisi pengguna (frontend), server aplikasi (backend), dan database untuk menyimpan data. Pengguna melakukan autentikasi untuk mengakses fitur sesuai hak aksesnya. Sistem menerapkan praktik DevSecOps dengan mengintegrasikan keamanan pada proses pengembangan, pengujian, dan deployment aplikasi.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [
+      {
+        "name": "Guntur Dwi Satriawan"
+      },
+      {
+        "name": "Maulana Alifian"
+      },
+      {
+        "name": "Surya Pradita"
+      }
+    ],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "DFD Threat Sistem E-Commerce",
+        "diagramType": "STRIDE",
+        "placeholder": "Deskripsi diagram STRIDE baru",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.2",
+        "cells": [],
+        "description": "Data Flow Diagram untuk aplikasi pemesanan online "
+      }
+    ],
+    "diagramTop": 2,
+    "reviewer": "April Rustianto, S.Komp., M.T., CCIE",
+    "threatTop": 0
+  }
+}
