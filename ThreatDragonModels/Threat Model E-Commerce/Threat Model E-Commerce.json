@@ -65,8 +65,8 @@
           },
           {
             "position": {
-              "x": 189.99999999999977,
-              "y": -249.99999999999835
+              "x": 150,
+              "y": -266.9999999999993
             },
             "size": {
               "width": 940,
@@ -89,12 +89,12 @@
               "hasOpenThreats": false,
               "crossingFlows": [
                 "4e86d72a-6d3d-4910-bb39-afe0ac8c62b6",
+                "861a1df4-9953-40c3-a46d-6b338d6a2bb4",
                 "fde44696-9a2f-4360-85fe-bfed836e12d8",
                 "c1b6c300-4350-44c9-9d9b-11714bfc5c7c"
               ],
               "containedElements": [
-                "bdad26c3-81ea-489d-949f-df8d753049c2",
-                "ee0d695e-1249-474c-8ba0-02bc63f9e833"
+                "bdad26c3-81ea-489d-949f-df8d753049c2"
               ]
             }
           },
@@ -657,7 +657,9 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "f580a95a-67a7-468e-ade9-d4218cbcf532"
+              ]
             },
             "labels": [
               "REST API + JWT"
@@ -698,7 +700,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "HTTP",
+              "name": "HTTPS",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -714,7 +716,7 @@
               ]
             },
             "labels": [
-              "HTTP"
+              "HTTPS"
             ],
             "id": "fde44696-9a2f-4360-85fe-bfed836e12d8",
             "source": {
@@ -787,9 +789,153 @@
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Trigger Email",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Trigger Email"
+            ],
+            "id": "55154df1-bc5d-474e-9407-613c72acaf58",
+            "source": {
+              "x": 607,
+              "y": 73
+            },
+            "target": {
+              "cell": "5cbb183a-d5f6-4048-9a13-879e70956d57",
+              "port": "7725f554-0c5d-4a71-a4e7-955f748d736d"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Create Transaction",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Create Transaction"
+            ],
+            "id": "d8002845-8264-4416-ac22-2074c87cf2c4",
+            "source": {
+              "x": 537,
+              "y": 13
+            },
+            "target": {
+              "cell": "f2f07d35-641b-4200-b38a-3619319d3452",
+              "port": "7725f554-0c5d-4a71-a4e7-955f748d736d"
+            },
+            "vertices": [
+              {
+                "x": 340,
+                "y": 40
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Webhook Callback",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Webhook Callback"
+            ],
+            "id": "cac52c1c-bec6-45d3-aec3-5236b5aefb72",
+            "source": {
+              "x": 385,
+              "y": 130
+            },
+            "target": {
+              "x": 550,
+              "y": 50
+            }
+          },
+          {
             "position": {
               "x": 250,
-              "y": 100
+              "y": 130
             },
             "size": {
               "width": 140,
@@ -905,8 +1051,8 @@
           },
           {
             "position": {
-              "x": 472.5,
-              "y": 115
+              "x": 476.25,
+              "y": 145
             },
             "size": {
               "width": 120,
