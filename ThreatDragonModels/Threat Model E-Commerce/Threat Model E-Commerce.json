@@ -100,6 +100,40 @@
           },
           {
             "position": {
+              "x": 715,
+              "y": 105.00000000000054
+            },
+            "size": {
+              "width": 390,
+              "height": 140
+            },
+            "attrs": {
+              "label": {
+                "text": "Trust Boundary 3: Internal Data Layer"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "1194a18c-9bc6-406f-bd8c-74d02bad0991",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Trust Boundary 3: Internal Data Layer",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "f634f898-8398-49c7-ad86-159b5c892cbc",
+                "d7556c67-5977-4f10-8cbc-852b897d0712"
+              ],
+              "containedElements": [
+                "a769d427-d1dd-4dcc-8620-5fb9889cc3f4",
+                "97a0fd16-1070-41a4-b241-2488bb8f4026"
+              ]
+            }
+          },
+          {
+            "position": {
               "x": 480,
               "y": -400
             },
@@ -933,6 +967,114 @@
             }
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "SQL Query CRUD",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "1194a18c-9bc6-406f-bd8c-74d02bad0991"
+              ]
+            },
+            "labels": [
+              "SQL Query CRUD"
+            ],
+            "id": "f634f898-8398-49c7-ad86-159b5c892cbc",
+            "source": {
+              "x": 668,
+              "y": 45
+            },
+            "target": {
+              "cell": "a769d427-d1dd-4dcc-8620-5fb9889cc3f4",
+              "port": "455d5657-c0a0-411b-bc91-d4203eeb870b"
+            },
+            "vertices": [
+              {
+                "x": 690,
+                "y": 150
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Service Cart + R-W",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "1194a18c-9bc6-406f-bd8c-74d02bad0991"
+              ]
+            },
+            "labels": [
+              "Service Cart + R-W"
+            ],
+            "id": "d7556c67-5977-4f10-8cbc-852b897d0712",
+            "source": {
+              "x": 680,
+              "y": 25
+            },
+            "target": {
+              "cell": "97a0fd16-1070-41a4-b241-2488bb8f4026",
+              "port": "bdae0036-22af-4a21-90a1-dcbdd81af4eb"
+            },
+            "vertices": [
+              {
+                "x": 1050,
+                "y": 60
+              }
+            ]
+          },
+          {
             "position": {
               "x": 250,
               "y": 130
@@ -1165,6 +1307,254 @@
               "providesAuthentication": false,
               "threats": []
             }
+          },
+          {
+            "position": {
+              "x": 772.5,
+              "y": 140
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "MySQL DB"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "bdae0036-22af-4a21-90a1-dcbdd81af4eb"
+                },
+                {
+                  "group": "right",
+                  "id": "fa71d2b2-f558-4585-95a2-7f34a8621bf1"
+                },
+                {
+                  "group": "bottom",
+                  "id": "c72d7b6d-c507-4f88-b8af-764a752da4be"
+                },
+                {
+                  "group": "left",
+                  "id": "455d5657-c0a0-411b-bc91-d4203eeb870b"
+                }
+              ]
+            },
+            "id": "a769d427-d1dd-4dcc-8620-5fb9889cc3f4",
+            "zIndex": 13,
+            "data": {
+              "type": "tm.Store",
+              "name": "MySQL DB",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 935,
+              "y": 140
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Redis Cache"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "bdae0036-22af-4a21-90a1-dcbdd81af4eb"
+                },
+                {
+                  "group": "right",
+                  "id": "fa71d2b2-f558-4585-95a2-7f34a8621bf1"
+                },
+                {
+                  "group": "bottom",
+                  "id": "c72d7b6d-c507-4f88-b8af-764a752da4be"
+                },
+                {
+                  "group": "left",
+                  "id": "455d5657-c0a0-411b-bc91-d4203eeb870b"
+                }
+              ]
+            },
+            "id": "97a0fd16-1070-41a4-b241-2488bb8f4026",
+            "data": {
+              "type": "tm.Store",
+              "name": "Redis Cache",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": []
+            },
+            "zIndex": 14
           }
         ],
         "description": "Data Flow Diagram untuk aplikasi pemesanan online "
