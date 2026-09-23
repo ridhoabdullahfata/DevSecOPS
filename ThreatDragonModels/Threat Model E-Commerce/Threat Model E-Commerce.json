@@ -96,13 +96,6 @@
                 "bdad26c3-81ea-489d-949f-df8d753049c2",
                 "ee0d695e-1249-474c-8ba0-02bc63f9e833"
               ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -867,7 +860,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -888,15 +882,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "f857382c-bc26-4d09-8407-d78451deaf18",
+                  "title": "Ancaman STRIDE baru",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Berikan deskripsi untuk ancaman ini",
+                  "mitigation": "Aktifkan requirepass/ACL Redis; bind ke internal network saja; set TTL session",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
                 "1194a18c-9bc6-406f-bd8c-74d02bad0991"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Service Cart + R-W"
@@ -919,7 +932,17 @@
                 "x": 1050,
                 "y": 60
               }
-            ]
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "shape": "flow",
@@ -1670,6 +1693,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "April Rustianto, S.Komp., M.T., CCIE",
-    "threatTop": 9
+    "threatTop": 10
   }
 }
