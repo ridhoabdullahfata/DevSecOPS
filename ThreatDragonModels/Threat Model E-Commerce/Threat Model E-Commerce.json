@@ -4,8 +4,8 @@
   "released_at": "2026-09-23",
   "summary": {
     "title": "Threat Model E-Commerce",
-    "owner": "Ridho Abdullah fata",
-    "description": "Sistem merupakan aplikasi web yang digunakan untuk mengelola data dan menyediakan layanan kepada pengguna melalui jaringan internet. Aplikasi terdiri dari sisi pengguna (frontend), server aplikasi (backend), dan database untuk menyimpan data. Pengguna melakukan autentikasi untuk mengakses fitur sesuai hak aksesnya. Sistem menerapkan praktik DevSecOps dengan mengintegrasikan keamanan pada proses pengembangan, pengujian, dan deployment aplikasi.",
+    "owner": "Surya Pradita",
+    "description": "Sistem e-commerce berbasis web dengan frontend, backend, dan database untuk menyimpan data pengguna dan transaksi. Autentikasi digunakan untuk mengatur hak akses pengguna, dan praktik DevSecOps diterapkan dalam proses pengembangan hingga deployment.",
     "id": 0
   },
   "detail": {
@@ -17,7 +17,10 @@
         "name": "Maulana Alifian"
       },
       {
-        "name": "Surya Pradita"
+        "name": "Muhammad Farraz Wibawa"
+      },
+      {
+        "name": "Ridho Abdullah fata"
       }
     ],
     "diagrams": [
