@@ -96,6 +96,13 @@
                 "bdad26c3-81ea-489d-949f-df8d753049c2",
                 "ee0d695e-1249-474c-8ba0-02bc63f9e833"
               ]
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -905,7 +912,7 @@
             },
             "vertices": [
               {
-                "x": 800,
+                "x": 920,
                 "y": 25
               },
               {
@@ -1648,7 +1655,13 @@
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           }
         ],
@@ -1657,6 +1670,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "April Rustianto, S.Komp., M.T., CCIE",
-    "threatTop": 8
+    "threatTop": 9
   }
 }
