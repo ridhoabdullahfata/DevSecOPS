@@ -296,7 +296,7 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 4,
+                "spoofing": 7,
                 "repudiation": 0
               }
             }
@@ -418,12 +418,12 @@
               "threats": [
                 {
                   "id": "1afdb28f-dee9-4445-901a-ab1c290efc06",
-                  "title": "Ancaman STRIDE baru",
+                  "title": "Pengambilalihan akun Admin",
                   "status": "Open",
-                  "severity": "Medium",
-                  "type": "Repudiation",
-                  "description": "Admin dapat menyangkal telah mengubah/menghapus data produk karena tidak ada audit log",
-                  "mitigation": "Implementasi audit log (siapa, aksi apa, kapan, IP) untuk setiap operasi create/update/delete produk",
+                  "severity": "Critical",
+                  "type": "Spoofing",
+                  "description": "Pengambilalihan akun Admin lewat phishing/credential stuffing",
+                  "mitigation": "MFA wajib untuk Admin; deteksi anomali login; IP whitelist/VPN untuk panel Admin; lockout setelah gagal berulang",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 8,
@@ -431,7 +431,7 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 0,
+                "spoofing": 2,
                 "repudiation": 1
               }
             }
@@ -450,8 +450,8 @@
                 "text": "React Frontend"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -548,18 +548,40 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "75800bd8-2ede-4881-9dd6-ad8dc4f4df8d",
+                  "title": "Kontrol akses Admin",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Kontrol akses Admin hanya disembunyikan di UI, bisa dibypass tanpa validasi role di backend",
+                  "mitigation": "Terapkan RBAC di setiap endpoint backend (Node.js API), verifikasi role dari token/session",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
             "position": {
-              "x": 516.25,
-              "y": -94.99999999999835
+              "x": 525,
+              "y": -76.99999999999932
             },
             "size": {
               "width": 170,
@@ -732,12 +754,12 @@
               "threats": [
                 {
                   "id": "3a9d4406-0307-4443-9916-e812bcc6aff7",
-                  "title": "Ancaman STRIDE baru",
+                  "title": "Manipulasi payload",
                   "status": "Open",
                   "severity": "High",
                   "type": "Tampering",
-                  "description": "Berikan deskrData request (harga, quantity, item) dimanipulasi sebelum sampai ke backend jika tidak divalidasi ulang di serveripsi untuk ancaman ini",
-                  "mitigation": "Validasi ulang semua data transaksi di backend (jangan pernah percaya harga dari client, ambil harga dari DB berdasarkan product ID)",
+                  "description": "Manipulasi payload request (harga, quantity) sebelum diproses backend",
+                  "mitigation": "Validasi ulang harga/quantity di server dari DB, bukan dari client; schema validation (Joi/Zod)",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 7,
@@ -746,7 +768,7 @@
               ],
               "trustBoundaryIds": [],
               "threatFrequency": {
-                "tampering": 1,
+                "tampering": 3,
                 "informationDisclosure": 0,
                 "denialOfService": 0
               }
@@ -765,8 +787,8 @@
             },
             "vertices": [
               {
-                "x": 320,
-                "y": -130
+                "x": 330,
+                "y": -120
               }
             ]
           },
@@ -912,11 +934,11 @@
               "threats": [
                 {
                   "id": "f857382c-bc26-4d09-8407-d78451deaf18",
-                  "title": "Ancaman STRIDE baru",
+                  "title": "Data cart terekspos",
                   "status": "Open",
-                  "severity": "TBD",
-                  "type": "Tampering",
-                  "description": "Berikan deskripsi untuk ancaman ini",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Data cart/session di Redis terekspos jika tanpa autentikasi",
                   "mitigation": "Aktifkan requirepass/ACL Redis; bind ke internal network saja; set TTL session",
                   "modelType": "STRIDE",
                   "new": false,
@@ -929,7 +951,7 @@
               ],
               "threatFrequency": {
                 "tampering": 1,
-                "informationDisclosure": 0,
+                "informationDisclosure": 3,
                 "denialOfService": 0
               }
             },
@@ -947,96 +969,12 @@
             },
             "vertices": [
               {
-                "x": 920,
-                "y": 25
-              },
-              {
                 "x": 1050,
                 "y": 60
               }
             ],
             "tools": {
               "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
                 "boundary",
                 "button-remove",
                 "vertices",
@@ -1093,8 +1031,8 @@
             },
             "vertices": [
               {
-                "x": 890,
-                "y": -130
+                "x": 900,
+                "y": -120
               }
             ]
           },
@@ -1199,7 +1137,8 @@
             "target": {
               "cell": "5cbb183a-d5f6-4048-9a13-879e70956d57",
               "port": "46dfca34-c06e-46c5-892a-766abcf4c781"
-            }
+            },
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -1249,7 +1188,7 @@
               ],
               "trustBoundaryIds": [],
               "threatFrequency": {
-                "tampering": 1,
+                "tampering": 2,
                 "informationDisclosure": 0,
                 "denialOfService": 0
               }
@@ -1265,7 +1204,13 @@
             "target": {
               "x": 550,
               "y": 50
-            }
+            },
+            "vertices": [
+              {
+                "x": 430,
+                "y": 110
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -1303,10 +1248,10 @@
                   "id": "d0827199-628f-4d5d-971f-48ce8c10dc4f",
                   "title": "manipulasi transaksi",
                   "status": "Open",
-                  "severity": "TBD",
-                  "type": "Tampering",
-                  "description": "Nominal atau Detail Transaksi dimanipulasi",
-                  "mitigation": "HTTPS +Server-side price calculation + request signing",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Penyerang membanjiri endpoint create-transaction dengan request palsu berulang, membebani API dan mengganggu ketersediaan layanan checkout",
+                  "mitigation": "Verifikasi signature/HMAC dari provider; validasi status transaksi ke API resmi; idempotency key",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 14,
@@ -1317,9 +1262,9 @@
                 "224a959b-8bd4-4f20-ba81-1089e139a50a"
               ],
               "threatFrequency": {
-                "tampering": 1,
+                "tampering": 4,
                 "informationDisclosure": 0,
-                "denialOfService": 0
+                "denialOfService": 2
               }
             },
             "labels": [
@@ -1703,10 +1648,10 @@
                   "id": "9b4b5ba9-1310-4bab-be83-7d87373e14dd",
                   "title": "Data customer bocor",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Information disclosure",
-                  "description": "Data Customer dibaca oleh pihak yg tidak berwenang",
-                  "mitigation": "Least privilage DB account + enciption + acccess control",
+                  "description": "Data MySQL diubah langsung tanpa lewat API akibat kredensial lemah/akses tidak dibatasi",
+                  "mitigation": "Batasi akses MySQL hanya dari internal network/API server (firewall, security group, tidak expose port 3306 ke publik)",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 13,
@@ -1716,7 +1661,7 @@
               "threatFrequency": {
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 1,
+                "informationDisclosure": 2,
                 "denialOfService": 0
               }
             }
@@ -1857,6 +1802,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "April Rustianto, S.Komp., M.T., CCIE",
-    "threatTop": 15
+    "threatTop": 17
   }
 }
