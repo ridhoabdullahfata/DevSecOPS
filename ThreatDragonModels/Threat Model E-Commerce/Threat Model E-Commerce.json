@@ -932,17 +932,7 @@
                 "x": 1050,
                 "y": 60
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "shape": "flow",
@@ -1070,52 +1060,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Webhook Callback",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Webhook Callback"
-            ],
-            "id": "cac52c1c-bec6-45d3-aec3-5236b5aefb72",
-            "source": {
-              "x": 310,
-              "y": 230
-            },
-            "target": {
-              "x": 550,
-              "y": 50
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "HTTPS",
               "description": "",
               "outOfScope": false,
@@ -1197,6 +1141,72 @@
             "target": {
               "cell": "5cbb183a-d5f6-4048-9a13-879e70956d57",
               "port": "46dfca34-c06e-46c5-892a-766abcf4c781"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Webhook Callback",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "11cf28fe-a6c5-4585-b99d-d38d692d9bbc",
+                  "title": "Callback webhook dipalsukan",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Callback webhook dipalsukan (tanpa verifikasi signature/HMAC) untuk mengklaim pembayaran sukses secara palsu",
+                  "mitigation": "Verifikasi signature/HMAC dari provider pada setiap callback; validasi ulang status transaksi ke API resmi provider; idempotency key",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Webhook Callback"
+            ],
+            "id": "cac52c1c-bec6-45d3-aec3-5236b5aefb72",
+            "source": {
+              "x": 310,
+              "y": 230
+            },
+            "target": {
+              "x": 550,
+              "y": 50
             }
           },
           {
@@ -1447,11 +1457,13 @@
                 "text": "MySQL DB"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1548,13 +1560,40 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "9b4b5ba9-1310-4bab-be83-7d87373e14dd",
+                  "title": "Data customer bocor",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Data Customer dibaca oleh pihak yg tidak berwenang",
+                  "mitigation": "Least privilage DB account + enciption + acccess control",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1693,6 +1732,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "April Rustianto, S.Komp., M.T., CCIE",
-    "threatTop": 10
+    "threatTop": 13
   }
 }
