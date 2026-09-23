@@ -48,8 +48,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "68065e49-92b2-41ba-a6e0-a6ed61010c36",
             "zIndex": -1,
+            "id": "68065e49-92b2-41ba-a6e0-a6ed61010c36",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Trust Boundary 1: Internet",
@@ -62,40 +62,6 @@
                 "da31cd68-3422-4ef2-a47e-741637272db5"
               ]
             }
-          },
-          {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": -1,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "Trust Boundary",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false,
-              "crossingFlows": [],
-              "containedElements": []
-            },
-            "labels": [
-              "Trust Boundary"
-            ],
-            "id": "f4329541-ba9a-4970-9c24-afbf7ce3644e",
-            "source": {
-              "x": 420,
-              "y": -221
-            },
-            "target": {
-              "x": 520,
-              "y": -121
-            },
-            "vertices": [
-              {
-                "x": 460,
-                "y": -190
-              }
-            ]
           },
           {
             "position": {
@@ -118,6 +84,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -201,7 +168,6 @@
               ]
             },
             "id": "9476ef6a-90df-463d-b622-b7cb50e1d0c2",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Costumer",
@@ -235,6 +201,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -318,7 +285,6 @@
               ]
             },
             "id": "da31cd68-3422-4ef2-a47e-741637272db5",
-            "zIndex": 2,
             "data": {
               "type": "tm.Actor",
               "name": "Admin",
@@ -352,6 +318,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -435,7 +402,6 @@
               ]
             },
             "id": "bdad26c3-81ea-489d-949f-df8d753049c2",
-            "zIndex": 3,
             "data": {
               "type": "tm.Process",
               "name": "React Frontend",
@@ -472,6 +438,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -555,7 +522,6 @@
               ]
             },
             "id": "ee0d695e-1249-474c-8ba0-02bc63f9e833",
-            "zIndex": 4,
             "data": {
               "type": "tm.Process",
               "name": "Node.js REST API",
@@ -570,6 +536,122 @@
               "privilegeLevel": "",
               "threats": []
             }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Data Flow"
+            ],
+            "id": "861a1df4-9953-40c3-a46d-6b338d6a2bb4",
+            "source": {
+              "x": 530,
+              "y": -190
+            },
+            "target": {
+              "cell": "ee0d695e-1249-474c-8ba0-02bc63f9e833",
+              "port": "9f15c986-eab3-46b0-8e78-d352d01b8750"
+            },
+            "vertices": [
+              {
+                "x": 430,
+                "y": -60
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Data Flow"
+            ],
+            "id": "2ffc27e2-5962-4316-941f-045e431d6c63",
+            "source": {
+              "x": 700,
+              "y": 0
+            },
+            "target": {
+              "x": 970,
+              "y": -230
+            },
+            "vertices": [
+              {
+                "x": 820,
+                "y": -80
+              },
+              {
+                "x": 840,
+                "y": -80
+              },
+              {
+                "x": 850,
+                "y": -120
+              },
+              {
+                "x": 790,
+                "y": -180
+              }
+            ]
           }
         ],
         "description": "Data Flow Diagram untuk aplikasi pemesanan online "
