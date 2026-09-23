@@ -88,13 +88,13 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
-                "861a1df4-9953-40c3-a46d-6b338d6a2bb4",
-                "fde44696-9a2f-4360-85fe-bfed836e12d8",
                 "c1b6c300-4350-44c9-9d9b-11714bfc5c7c",
-                "4e86d72a-6d3d-4910-bb39-afe0ac8c62b6"
+                "fde44696-9a2f-4360-85fe-bfed836e12d8",
+                "55154df1-bc5d-474e-9407-613c72acaf58"
               ],
               "containedElements": [
-                "bdad26c3-81ea-489d-949f-df8d753049c2"
+                "bdad26c3-81ea-489d-949f-df8d753049c2",
+                "ee0d695e-1249-474c-8ba0-02bc63f9e833"
               ]
             }
           },
@@ -114,8 +114,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "1194a18c-9bc6-406f-bd8c-74d02bad0991",
             "zIndex": -1,
+            "id": "1194a18c-9bc6-406f-bd8c-74d02bad0991",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Trust Boundary 3: Internal Data Layer",
@@ -148,8 +148,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "224a959b-8bd4-4f20-ba81-1089e139a50a",
             "zIndex": -1,
+            "id": "224a959b-8bd4-4f20-ba81-1089e139a50a",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Trust Boundary 4: Third-Party Services",
@@ -157,8 +157,8 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
-                "55154df1-bc5d-474e-9407-613c72acaf58",
-                "d8002845-8264-4416-ac22-2074c87cf2c4"
+                "d8002845-8264-4416-ac22-2074c87cf2c4",
+                "55154df1-bc5d-474e-9407-613c72acaf58"
               ],
               "containedElements": [
                 "f2f07d35-641b-4200-b38a-3619319d3452",
@@ -180,8 +180,8 @@
                 "text": "Costumer"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -278,20 +278,27 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": [],
+              "threats": [
+                {
+                  "id": "1540eb61-1632-4282-b549-3af07a3839be",
+                  "title": "Pencurian Session Token",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Penyerang mencuri/memalsukan session token Customer untuk login sebagai pengguna lain",
+                  "mitigation": "Gunakan JWT dengan masa berlaku pendek (misal 15 menit) + refresh token tersimpan aman (httpOnly, secure cookie)",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ],
               "threatFrequency": {
-                "spoofing": 0,
+                "spoofing": 4,
                 "repudiation": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -308,8 +315,8 @@
                 "text": "Admin"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -406,9 +413,27 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "1afdb28f-dee9-4445-901a-ab1c290efc06",
+                  "title": "Ancaman STRIDE baru",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Admin dapat menyangkal telah mengubah/menghapus data produk karena tidak ada audit log",
+                  "mitigation": "Implementasi audit log (siapa, aksi apa, kapan, IP) untuk setiap operasi create/update/delete produk",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "repudiation": 1
+              }
             }
           },
           {
@@ -533,8 +558,8 @@
           },
           {
             "position": {
-              "x": 525,
-              "y": -76.9999999999993
+              "x": 516.25,
+              "y": -94.99999999999835
             },
             "size": {
               "width": 170,
@@ -655,7 +680,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -676,15 +702,32 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": [
-                "f580a95a-67a7-468e-ade9-d4218cbcf532"
-              ]
+              "threats": [
+                {
+                  "id": "3a9d4406-0307-4443-9916-e812bcc6aff7",
+                  "title": "Ancaman STRIDE baru",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Berikan deskrData request (harga, quantity, item) dimanipulasi sebelum sampai ke backend jika tidak divalidasi ulang di serveripsi untuk ancaman ini",
+                  "mitigation": "Validasi ulang semua data transaksi di backend (jangan pernah percaya harga dari client, ambil harga dari DB berdasarkan product ID)",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Request"
@@ -700,62 +743,8 @@
             },
             "vertices": [
               {
-                "x": 330,
-                "y": -110
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "HTTPS",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": [
-                "f580a95a-67a7-468e-ade9-d4218cbcf532"
-              ]
-            },
-            "labels": [
-              "HTTPS"
-            ],
-            "id": "fde44696-9a2f-4360-85fe-bfed836e12d8",
-            "source": {
-              "x": 536,
-              "y": -340
-            },
-            "target": {
-              "cell": "bdad26c3-81ea-489d-949f-df8d753049c2",
-              "port": "d2c4bffb-ce60-40f1-95ef-a82e88abd441"
-            },
-            "vertices": [
-              {
-                "x": 560,
-                "y": -280
+                "x": 320,
+                "y": -130
               }
             ]
           },
@@ -916,6 +905,10 @@
             },
             "vertices": [
               {
+                "x": 800,
+                "y": 25
+              },
+              {
                 "x": 1050,
                 "y": 60
               }
@@ -952,9 +945,7 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": [
-                "f580a95a-67a7-468e-ade9-d4218cbcf532"
-              ]
+              "trustBoundaryIds": []
             },
             "labels": [
               "Response"
@@ -970,58 +961,10 @@
             },
             "vertices": [
               {
-                "x": 900,
-                "y": -110
+                "x": 890,
+                "y": -130
               }
             ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Trigger Email",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": [
-                "224a959b-8bd4-4f20-ba81-1089e139a50a"
-              ]
-            },
-            "labels": [
-              "Trigger Email"
-            ],
-            "id": "55154df1-bc5d-474e-9407-613c72acaf58",
-            "source": {
-              "cell": "ee0d695e-1249-474c-8ba0-02bc63f9e833",
-              "port": "05174372-a4e0-41e6-b37d-ed60a56f83dd"
-            },
-            "target": {
-              "cell": "5cbb183a-d5f6-4048-9a13-879e70956d57",
-              "port": "7725f554-0c5d-4a71-a4e7-955f748d736d"
-            }
           },
           {
             "shape": "flow",
@@ -1121,6 +1064,109 @@
             "target": {
               "x": 550,
               "y": 50
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "HTTPS",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "f580a95a-67a7-468e-ade9-d4218cbcf532"
+              ]
+            },
+            "labels": [
+              "HTTPS"
+            ],
+            "id": "fde44696-9a2f-4360-85fe-bfed836e12d8",
+            "source": {
+              "x": 536,
+              "y": -340
+            },
+            "target": {
+              "cell": "bdad26c3-81ea-489d-949f-df8d753049c2",
+              "port": "d2c4bffb-ce60-40f1-95ef-a82e88abd441"
+            },
+            "vertices": [
+              {
+                "x": 560,
+                "y": -280
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Trigger Email",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "f580a95a-67a7-468e-ade9-d4218cbcf532",
+                "224a959b-8bd4-4f20-ba81-1089e139a50a"
+              ]
+            },
+            "labels": [
+              "Trigger Email"
+            ],
+            "id": "55154df1-bc5d-474e-9407-613c72acaf58",
+            "source": {
+              "cell": "ee0d695e-1249-474c-8ba0-02bc63f9e833",
+              "port": "05174372-a4e0-41e6-b37d-ed60a56f83dd"
+            },
+            "target": {
+              "cell": "5cbb183a-d5f6-4048-9a13-879e70956d57",
+              "port": "46dfca34-c06e-46c5-892a-766abcf4c781"
             }
           },
           {
@@ -1381,6 +1427,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 13,
             "ports": {
               "groups": {
                 "top": {
@@ -1464,7 +1511,6 @@
               ]
             },
             "id": "a769d427-d1dd-4dcc-8620-5fb9889cc3f4",
-            "zIndex": 13,
             "data": {
               "type": "tm.Store",
               "name": "MySQL DB",
@@ -1505,6 +1551,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 14,
             "ports": {
               "groups": {
                 "top": {
@@ -1602,8 +1649,7 @@
               "storesCredentials": false,
               "storesInventory": false,
               "threats": []
-            },
-            "zIndex": 14
+            }
           }
         ],
         "description": "Data Flow Diagram untuk aplikasi pemesanan online "
@@ -1611,6 +1657,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "April Rustianto, S.Komp., M.T., CCIE",
-    "threatTop": 2
+    "threatTop": 8
   }
 }
