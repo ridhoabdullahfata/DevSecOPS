@@ -557,7 +557,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Response",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -571,21 +571,21 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Data Flow"
+              "Response"
             ],
-            "id": "861a1df4-9953-40c3-a46d-6b338d6a2bb4",
+            "id": "4e86d72a-6d3d-4910-bb39-afe0ac8c62b6",
             "source": {
-              "x": 530,
-              "y": -190
+              "x": 695,
+              "y": -7
             },
             "target": {
-              "cell": "ee0d695e-1249-474c-8ba0-02bc63f9e833",
-              "port": "9f15c986-eab3-46b0-8e78-d352d01b8750"
+              "cell": "bdad26c3-81ea-489d-949f-df8d753049c2",
+              "port": "b54ab94c-7cc9-40ca-8d65-1b9fccc9bbf7"
             },
             "vertices": [
               {
-                "x": 430,
-                "y": -60
+                "x": 900,
+                "y": -110
               }
             ]
           },
@@ -609,7 +609,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "REST API + JWT",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -623,25 +623,21 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Data Flow"
+              "REST API + JWT"
             ],
-            "id": "1a111833-510f-4fb1-8aa9-87c09f1de371",
+            "id": "861a1df4-9953-40c3-a46d-6b338d6a2bb4",
             "source": {
-              "x": 695,
-              "y": 0
+              "cell": "bdad26c3-81ea-489d-949f-df8d753049c2",
+              "port": "9f15c986-eab3-46b0-8e78-d352d01b8750"
             },
             "target": {
-              "x": 840,
-              "y": -140
+              "cell": "ee0d695e-1249-474c-8ba0-02bc63f9e833",
+              "port": "9f15c986-eab3-46b0-8e78-d352d01b8750"
             },
             "vertices": [
               {
-                "x": 750,
-                "y": 50
-              },
-              {
-                "x": 790,
-                "y": -20
+                "x": 330,
+                "y": -110
               }
             ]
           }
